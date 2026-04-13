@@ -53,3 +53,29 @@ O aplicativo surge como uma solução tecnológica para automatizar e organizar 
 ---
 
 ## 📁 Estrutura do Projeto
+
+
+---
+
+## 📸 Protótipo / Telas
+
+*(Adicionar prints do aplicativo aqui futuramente)*
+
+---
+
+## 👨‍💻 Equipe
+
+- Nicollas Fernandes Melo  
+- Dandara Carvalho Silva  
+
+---
+
+## 📌 Status do Projeto
+
+🚧 Em desenvolvimento (MVP)
+
+---
+
+## 📄 Licença
+
+Este projeto é de caráter acadêmico, desenvolvido para fins educacionais.
