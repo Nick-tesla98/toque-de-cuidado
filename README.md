@@ -54,6 +54,12 @@ O aplicativo surge como uma solução tecnológica para automatizar e organizar 
 
 ## 📁 Estrutura do Projeto
 
+lib/
+├── screens/
+├── models/
+├── services/
+└── widgets/
+
 
 ---
 
