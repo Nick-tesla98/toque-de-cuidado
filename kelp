@@ -1,0 +1,137 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Toque de Cuidado',
+      home: LoginScreen(),
+    );
+  }
+}
+
+// ================= LOGIN =================
+class LoginScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Login')),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            TextField(decoration: InputDecoration(labelText: 'Email')),
+            TextField(decoration: InputDecoration(labelText: 'Senha'), obscureText: true),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+              },
+              child: Text('Entrar'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ================= HOME =================
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Pacientes')),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('João Silva'),
+            subtitle: Text('2 medicamentos'),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) => MedicationScreen()));
+            },
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) => AddPatientScreen()));
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+// ================= CADASTRO PACIENTE =================
+class AddPatientScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Novo Paciente')),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            TextField(decoration: InputDecoration(labelText: 'Nome')),
+            TextField(decoration: InputDecoration(labelText: 'Idade')),
+            SizedBox(height: 20),
+            ElevatedButton(onPressed: () {}, child: Text('Salvar'))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ================= MEDICAMENTOS =================
+class MedicationScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Medicamentos')),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Dipirona'),
+            subtitle: Text('8h - 12h - 18h'),
+            trailing: Checkbox(value: false, onChanged: (v) {}),
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) => AddMedicationScreen()));
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+// ================= CADASTRO MEDICAMENTO =================
+class AddMedicationScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Novo Medicamento')),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            TextField(decoration: InputDecoration(labelText: 'Nome')),
+            TextField(decoration: InputDecoration(labelText: 'Dosagem')),
+            TextField(decoration: InputDecoration(labelText: 'Horário')),
+            SizedBox(height: 20),
+            ElevatedButton(onPressed: () {}, child: Text('Salvar'))
+          ],
+        ),
+      ),
+    );
+  }
+}
